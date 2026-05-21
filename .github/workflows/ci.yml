@@ -97,6 +97,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: false
+          load: true
           tags: mumu-backend:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -107,6 +108,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
+          load: true
           tags: mumu-nginx:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -118,4 +120,4 @@ jobs:
         run: |
           echo "✅ 后端镜像构建成功: mumu-backend:latest"
           echo "✅ 前端镜像构建成功: mumu-nginx:latest"
-          docker images | grep mumu
+          docker images mumu-backend mumu-nginx
