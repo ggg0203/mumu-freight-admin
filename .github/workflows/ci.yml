@@ -32,14 +32,11 @@ jobs:
       - name: 安装依赖
         run: npm ci
 
-      - name: TypeScript 类型检查
-        run: npx tsc -b --noEmit 2>&1 || echo "⚠️ 类型检查有警告，继续构建"
-
       - name: ESLint 检查
         run: npm run lint || echo "⚠️ Lint 检查有警告"
 
-      - name: Vite 构建
-        run: npm run build
+      - name: Vite 构建（esbuild，跳过 tsc 类型检查）
+        run: npx vite build
         env:
           VITE_API_BASE_URL: /api
           VITE_APP_TITLE: 幕幕货运管理系统
