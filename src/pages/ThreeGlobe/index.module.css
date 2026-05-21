@@ -1,0 +1,231 @@
+/* ==================== 页面容器 ==================== */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+/* ==================== 统计卡片 ==================== */
+
+.statsRow {
+  flex-shrink: 0;
+}
+
+.statCard {
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+}
+
+.statSub {
+  font-size: 12px;
+  color: var(--ant-color-text-tertiary);
+  margin-top: 4px;
+}
+
+/* ==================== 地球容器 ==================== */
+
+.globeWrapper {
+  position: relative;
+  height: calc(100vh - 64px - 48px - 140px - 32px);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #060b24;
+}
+
+/* ==================== 3D 地球卡片 ==================== */
+
+.globeCard {
+  height: 100% !important;
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.globeCard :global(.ant-card-body) {
+  padding: 0;
+  height: 100%;
+}
+
+/* ==================== 缩放控制面板 ==================== */
+
+.zoomPanel {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+  background: rgba(6, 11, 36, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 10px 6px;
+  border: 1px solid rgba(68, 136, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.zoomBtn {
+  border: none !important;
+  background: rgba(68, 136, 255, 0.15) !important;
+  color: #88bbff !important;
+  border-radius: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s !important;
+}
+
+.zoomBtn:hover {
+  background: rgba(68, 136, 255, 0.35) !important;
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+.zoomBtn:active {
+  transform: scale(0.95);
+}
+
+.sliderWrapper {
+  height: 120px;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoomSlider {
+  margin: 0 !important;
+  height: 100% !important;
+}
+
+.zoomSlider :global(.ant-slider-rail) {
+  background: rgba(68, 136, 255, 0.15) !important;
+}
+
+.zoomSlider :global(.ant-slider-track) {
+  background: linear-gradient(to top, #4488ff, #44ddff) !important;
+}
+
+.zoomSlider :global(.ant-slider-handle) {
+  border-color: #44ddff !important;
+  box-shadow: 0 0 8px rgba(68, 221, 255, 0.5) !important;
+}
+
+.zoomLabel {
+  font-size: 11px;
+  color: rgba(136, 187, 255, 0.7);
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ==================== 详情卡片 ==================== */
+
+.detailCard {
+  height: calc(100vh - 64px - 48px - 140px - 32px) !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.detailCard :global(.ant-card-body) {
+  padding: 16px;
+  overflow-y: auto;
+  height: calc(100% - 56px);
+}
+
+/* ==================== 城市详情 ==================== */
+
+.cityDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cityHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ant-color-border-secondary);
+}
+
+.cityName {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ant-color-text);
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--ant-color-bg-layout);
+  border-radius: 8px;
+}
+
+.detailLabel {
+  font-size: 12px;
+  color: var(--ant-color-text-secondary);
+}
+
+.detailValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ant-color-text);
+}
+
+/* ==================== 关联路线 ==================== */
+
+.relatedTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ant-color-text);
+  padding-top: 4px;
+}
+
+.routeList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.routeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--ant-color-bg-layout);
+  border-radius: 8px;
+}
+
+.routeCities {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ant-color-text);
+}
+
+/* ==================== 排名表格 ==================== */
+
+.rank {
+  font-size: 14px;
+  font-weight: 500;
+}

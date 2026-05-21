@@ -1,0 +1,112 @@
+/* ★★★ 地图容器样式 ★★★ */
+
+.mapCard {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 地图外层容器（取代旧的 Card 包裹） */
+.mapWrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 地图工具栏 - 浮在地图左上角（避免与腾讯地图右上角罗盘/缩放控件重叠） */
+.mapToolbar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] .mapToolbar {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+/* 地图容器 */
+.mapContainer {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+/* 加载遮罩 */
+.loadingMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 100;
+}
+
+/* 加载文字 */
+.loadingText {
+  font-size: 14px;
+  color: #999;
+}
+
+/* 地图底部信息栏 */
+.mapInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #fafafa;
+  border-top: 1px solid #f0f0f0;
+  font-size: 12px;
+  color: #666;
+}
+
+.mapInfo span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .mapInfo {
+  background-color: #1f1f1f;
+  border-top-color: #303030;
+  color: #999;
+}
+
+/* 腾讯地图样式覆盖 */
+.mapContainer :global(.smnoprint) {
+  background-color: transparent !important;
+}
+
+.mapContainer :global(.qq_ctrl) {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme='dark'] .mapContainer :global(.qq_ctrl) {
+  background-color: rgba(30, 30, 30, 0.9) !important;
+}
+
+.mapContainer :global(.qq_geo_loc) {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme='dark'] .mapContainer :global(.qq_geo_loc) {
+  background-color: rgba(30, 30, 30, 0.9) !important;
+}

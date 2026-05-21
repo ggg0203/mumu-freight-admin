@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="85" fill="#1677ff"/>
+  <path d="M128 341 L128 277 L299 277 L299 341 Z" fill="white" opacity="0.3"/>
+  <path d="M213 256 L384 256 L384 341 L213 341 Z" fill="white"/>
+  <rect x="181" y="213" width="53" height="64" rx="5" fill="white" opacity="0.9"/>
+  <circle cx="235" cy="363" r="27" fill="white" opacity="0.3"/>
+  <circle cx="363" cy="363" r="27" fill="white" opacity="0.3"/>
+  <text x="256" y="160" font-family="Arial" font-size="75" font-weight="bold" fill="white" text-anchor="middle">MF</text>
+</svg>

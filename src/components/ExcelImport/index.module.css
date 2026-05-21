@@ -1,0 +1,19 @@
+/* ★★★ Excel 批量导入样式 ★★★ */
+
+/* 异常行标红 */
+.errorRow {
+  background-color: #fff2f0 !important;
+}
+
+.errorRow:hover td {
+  background-color: #fff1f0 !important;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .errorRow {
+  background-color: rgba(255, 77, 79, 0.08) !important;
+}
+
+[data-theme='dark'] .errorRow:hover td {
+  background-color: rgba(255, 77, 79, 0.12) !important;
+}

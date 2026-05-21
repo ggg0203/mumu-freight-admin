@@ -1,0 +1,37 @@
+/* ★★★ 课程管理页面样式 ★★★ */
+
+.course {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* 课程卡片 */
+.courseCard {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.courseCard:hover {
+  transform: translateY(-4px);
+}
+
+/* 课程标题 */
+.courseTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+/* 信息行 */
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* 暗黑模式适配 */
+:global(.dark) .infoRow {
+  color: #999;
+}

@@ -1,0 +1,235 @@
+/* ★★★ 运单轨迹追踪页面样式 ★★★ */
+
+/* 页面容器 */
+.container {
+  padding: 0;
+}
+
+/* 页面标题 */
+.pageHeader {
+  margin-bottom: 20px;
+}
+
+.pageHeader h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* 运单选择卡片 */
+.orderSelectCard {
+  margin-bottom: 16px;
+}
+
+/* 运单信息卡片 */
+.orderInfoCard {
+  margin-bottom: 16px;
+}
+
+/* 路线信息卡片 */
+.routeCard {
+  margin-bottom: 16px;
+}
+
+/* 位置信息卡片 */
+.locationCard {
+  margin-bottom: 16px;
+}
+
+/* 位置项 */
+.locationItem {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.locationIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.startIcon {
+  background-color: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #52c41a;
+}
+
+.currentIcon {
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #1890ff;
+}
+
+.endIcon {
+  background-color: #fff2e8;
+  border: 1px solid #ffbb96;
+  color: #fa8c16;
+}
+
+.locationContent {
+  flex: 1;
+}
+
+.locationTitle {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.locationName {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.locationAddress {
+  font-size: 12px;
+  color: #666;
+}
+
+.updateTime {
+  font-size: 11px;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* 轨迹线 */
+.trackLine {
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, #52c41a, #1890ff);
+  margin-left: 15px;
+  border-radius: 1px;
+}
+
+/* 进度区域 */
+.progressSection {
+  margin-top: 16px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #666;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1890ff, #52c41a);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* 地图卡片 */
+.mapCard {
+  margin-bottom: 16px;
+}
+
+/* 时间轴卡片 */
+.timelineCard {
+  margin-bottom: 16px;
+}
+
+/* 地图卡片头部（替代冗余的 Card wrapper） */
+.mapCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+
+[data-theme='dark'] .mapCardHeader {
+  background: #1f1f1f;
+  border-color: #303030;
+  color: #fff;
+}
+
+/* 播放进度条 */
+.playProgressBar {
+  height: 4px;
+  background: #f0f0f0;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+}
+
+[data-theme='dark'] .playProgressBar {
+  background: #303030;
+  border-color: #303030;
+}
+
+.playProgressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #1890ff, #52c41a);
+  transition: width 0.3s linear;
+}
+
+.timelineTitle {
+  font-weight: 500;
+  color: #333;
+}
+
+.timelineTime {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.timelineLocation {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .subtitle {
+  color: #999;
+}
+
+[data-theme='dark'] .locationName {
+  color: #fff;
+}
+
+[data-theme='dark'] .locationAddress {
+  color: #999;
+}
+
+[data-theme='dark'] .progressBar {
+  background-color: #303030;
+}
+
+[data-theme='dark'] .timelineTitle {
+  color: #fff;
+}
+
+[data-theme='dark'] .timelineTime {
+  color: #999;
+}

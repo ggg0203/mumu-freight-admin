@@ -1,0 +1,123 @@
+/* ★★★ TabBar 多标签页导航栏样式 ★★★ */
+
+/* 标签栏容器 */
+.tabBar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 8px;
+  border-bottom: 1px solid var(--border-color-split, #e8e8e8);
+  background: var(--bg-color-elevated, #fafafa);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* 标签列表容器 */
+.tabsContainer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex: 1;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+.tabsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* 单个标签 */
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid var(--border-color-split, #e8e8e8);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  background: var(--bg-color-container, #f5f5f5);
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-color-secondary, #666);
+  transition: all 0.15s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  background: var(--bg-color-component, #e8e8e8);
+  color: var(--text-color, #333);
+}
+
+/* 激活标签 */
+.tab.active {
+  background: var(--bg-color-container, #fff);
+  color: var(--text-color, #333);
+  font-weight: 500;
+  border-color: var(--border-color-split, #d9d9d9);
+  border-bottom-color: transparent;
+  margin-bottom: -1px;
+  z-index: 1;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* 激活标签底部指示器 */
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-color, #1677ff);
+}
+
+/* 标签标题 */
+.tabTitle {
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 关闭按钮 */
+.tabClose {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  opacity: 0.6;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.tabClose:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .tabBar {
+  --bg-color-elevated: #1f1f1f;
+  --border-color-split: #303030;
+  --bg-color-container: #141414;
+  --bg-color-component: #1f1f1f;
+  --text-color-secondary: #999;
+  --text-color: #e8e8e8;
+}
+
+[data-theme='dark'] .tab.active {
+  background: #1f1f1f;
+  border-color: #303030;
+  border-bottom-color: transparent;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .tab:hover {
+  background: #2a2a2a;
+}

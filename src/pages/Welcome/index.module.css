@@ -1,0 +1,75 @@
+/* ★★★ 欢迎页样式 ★★★ */
+
+.welcome {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 8px;
+}
+
+/* 快捷入口卡片 */
+.quickCard {
+  text-align: center;
+  padding: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quickCard:hover {
+  transform: translateY(-4px);
+}
+
+/* 卡片图标 */
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 24px;
+}
+
+/* 卡片标题 */
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* 卡片描述 */
+.cardDesc {
+  font-size: 13px;
+  color: #999;
+}
+
+/* 信息项 */
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* 信息标签 */
+.infoLabel {
+  color: #666;
+  font-size: 14px;
+}
+
+/* 信息值 */
+.infoValue {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* 暗黑模式适配 */
+:global(.dark) .infoItem {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+:global(.dark) .infoLabel {
+  color: #999;
+}

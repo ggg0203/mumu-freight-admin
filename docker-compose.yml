@@ -1,0 +1,91 @@
+# ==================== Docker Compose 编排 ====================
+# 幕幕货运管理系统 - 一键部署配置
+#
+# 使用方法:
+#   1. 复制 .env.example 为 .env 并修改配置
+#   2. docker compose up -d
+#   3. 访问 http://localhost
+#
+# 服务组成:
+#   - mysql:   MySQL 8.0 数据库
+#   - backend: FastAPI 后端 (端口 8080)
+#   - nginx:   Nginx 前端 + API 反向代理 (端口 80)
+
+version: "3.8"
+
+services:
+  # ==================== MySQL 数据库 ====================
+  mysql:
+    image: mysql:8.0
+    container_name: mumu-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-mumu_freight}
+      TZ: Asia/Shanghai
+    ports:
+      - "${MYSQL_PORT:-3307}:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-root}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - mumu-network
+
+  # ==================== FastAPI 后端 ====================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: mumu-backend
+    restart: always
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: ${DB_USER:-root}
+      DB_PASS: ${DB_PASS:-root}
+      DB_NAME: ${DB_NAME:-mumu_freight}
+      TZ: Asia/Shanghai
+    ports:
+      - "8080:8080"
+    networks:
+      - mumu-network
+
+  # ==================== Nginx 前端 + 反向代理 ====================
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_BASE_URL: /api
+        VITE_APP_TITLE: ${VITE_APP_TITLE:-幕幕货运管理系统}
+        DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+    container_name: mumu-nginx
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "${NGINX_PORT:-80}:80"
+    networks:
+      - mumu-network
+
+# ==================== 数据卷 ====================
+volumes:
+  mysql-data:
+    driver: local
+
+# ==================== 网络 ====================
+networks:
+  mumu-network:
+    driver: bridge

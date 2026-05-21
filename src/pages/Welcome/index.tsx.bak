@@ -1,0 +1,99 @@
+/**
+ * ★★★ 欢迎首页 ★★★
+ * 登录后进入的第一个页面，显示系统概览和快捷入口
+ */
+
+import { useNavigate } from 'react-router-dom';
+import { Card, Row, Col, Typography, theme } from 'antd';
+import {
+  TeamOutlined,
+  CarOutlined,
+  DollarOutlined,
+  FileTextOutlined,
+} from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
+import styles from './index.module.css';
+
+const { Title, Paragraph } = Typography;
+
+const Welcome: React.FC = () => {
+  const navigate = useNavigate();
+  const { token } = theme.useToken();
+  const { t } = useTranslation();
+
+  const quickLinks = [
+    { icon: <FileTextOutlined />, title: t('welcome.newOrder'), desc: t('welcome.newOrderDesc'), color: '#1677ff', path: '/order' },
+    { icon: <CarOutlined />, title: t('welcome.vehicleDispatch'), desc: t('welcome.vehicleDispatchDesc'), color: '#52c41a', path: '/driver-list' },
+    { icon: <TeamOutlined />, title: t('welcome.driverMgmt'), desc: t('welcome.driverMgmtDesc'), color: '#faad14', path: '/driver-list' },
+    { icon: <DollarOutlined />, title: t('welcome.financeReport'), desc: t('welcome.financeReportDesc'), color: '#ff4d4f', path: '/dashboard' },
+  ];
+
+  return (
+    <div className={styles.welcome}>
+      {/* ★★★ 欢迎标题 ★★★ */}
+      <div className={styles.header}>
+        <Title level={3} style={{ margin: 0 }}>
+          {t('app.welcomeTitle')}
+        </Title>
+        <Paragraph type="secondary" style={{ margin: '8px 0 0' }}>
+          今天是 {new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' })}
+        </Paragraph>
+      </div>
+
+      {/* ★★★ 快捷入口卡片 ★★★ */}
+      <Row gutter={[16, 16]} style={{ marginTop: 24 }}>
+        {quickLinks.map((link, index) => (
+          <Col xs={12} sm={12} md={6} key={index}>
+            <Card
+              hoverable
+              className={styles.quickCard}
+              style={{ borderRadius: 12 }}
+              onClick={() => navigate(link.path)}
+            >
+              <div className={styles.cardIcon} style={{ color: link.color, background: `${link.color}15` }}>
+                {link.icon}
+              </div>
+              <div className={styles.cardTitle}>{link.title}</div>
+              <div className={styles.cardDesc}>{link.desc}</div>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
+      {/* ★★★ 系统信息 ★★★ */}
+      <Card
+        title={t('welcome.systemInfo')}
+        style={{ marginTop: 24, borderRadius: 12 }}
+      >
+        <Row gutter={[24, 16]}>
+          <Col span={12}>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>{t('app.systemVersion')}</span>
+              <span className={styles.infoValue}>v1.0.0</span>
+            </div>
+          </Col>
+          <Col span={12}>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>{t('app.runtimeEnv')}</span>
+              <span className={styles.infoValue}>{import.meta.env.MODE}</span>
+            </div>
+          </Col>
+          <Col span={12}>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>{t('app.frontend')}</span>
+              <span className={styles.infoValue}>React 19 + TypeScript</span>
+            </div>
+          </Col>
+          <Col span={12}>
+            <div className={styles.infoItem}>
+              <span className={styles.infoLabel}>{t('app.uiFramework')}</span>
+              <span className={styles.infoValue}>Ant Design 5.x</span>
+            </div>
+          </Col>
+        </Row>
+      </Card>
+    </div>
+  );
+};
+
+export default Welcome;

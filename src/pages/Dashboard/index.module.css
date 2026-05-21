@@ -1,0 +1,30 @@
+.dashboard {
+  padding: 0;
+}
+
+.welcome {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.userInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.avatarWrap {
+  flex-shrink: 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 32px;
+  flex: 1;
+  font-size: 14px;
+  color: #555;
+  align-content: center;
+}

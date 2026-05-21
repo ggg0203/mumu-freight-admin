@@ -1,0 +1,28 @@
+/**
+ * CSS Module 样式 - Loading 组件
+ * 学习重点：CSS Module 的 :global 选择器用法
+ */
+
+/* 全屏 Loading 遮罩层 */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 9999;
+}
+
+/* 内容占位 - 确保 Spin 正常显示 */
+.content {
+  padding: 50px;
+}
+
+/* 暗黑模式适配 */
+:global(.dark) .fullscreen {
+  background: rgba(0, 0, 0, 0.65);
+}

@@ -1,0 +1,38 @@
+/* ★★★ 操作审计日志样式 ★★★ */
+
+.container {
+  padding: 0;
+}
+
+/* 统计卡片行 */
+.statsRow {
+  margin-bottom: 12px;
+}
+
+.statCard {
+  border-radius: 8px;
+}
+
+/* 筛选卡片 */
+.filterCard {
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+/* 表格卡片 */
+.tableCard {
+  border-radius: 8px;
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .statCard {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .filterCard {
+  background: #1f1f1f;
+}
+
+[data-theme='dark'] .tableCard {
+  background: #1f1f1f;
+}

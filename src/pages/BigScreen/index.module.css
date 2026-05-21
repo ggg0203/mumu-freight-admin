@@ -1,0 +1,247 @@
+/* ★★★ 数据可视化大屏样式 ★★★ */
+
+/* 全局全屏布局 */
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0a1628 100%);
+  color: #fff;
+  overflow-y: auto;
+  padding: 20px 24px 10px;
+  z-index: 1000;
+}
+
+/* 滚动条美化 */
+.screen::-webkit-scrollbar { width: 4px; }
+.screen::-webkit-scrollbar-track { background: transparent; }
+.screen::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+/* ===== 顶部标题栏 ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerLine {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5470c6);
+}
+
+.headerLine:last-child {
+  background: linear-gradient(90deg, #5470c6, transparent);
+}
+
+.headerTitle {
+  font-size: 22px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #5470c6, #91cc75);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 4px;
+}
+
+.headerCenter {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+}
+
+.headerRight {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Courier New', monospace;
+}
+
+/* ===== 统计卡片行 ===== */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+.statCard:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statBody {
+  flex: 1;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 4px;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  margin-bottom: 4px;
+}
+
+.statGrowth {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.up { color: #91cc75; }
+.down { color: #ee6666; }
+
+/* ===== 图表卡片 ===== */
+.chartRow {
+  margin-bottom: 16px !important;
+}
+
+.chartCard {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.chartTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titleDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ===== 实时运单列表 ===== */
+.orderList {
+  height: 240px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-size: 12px;
+  animation: slideIn 0.3s ease-out both;
+  transition: background 0.2s;
+}
+
+.orderItem:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.orderId {
+  font-family: 'Courier New', monospace;
+  color: rgba(255,255,255,0.4);
+  min-width: 60px;
+}
+
+.orderRoute {
+  flex: 1;
+  color: rgba(255,255,255,0.7);
+}
+
+.orderAmount {
+  font-family: 'Courier New', monospace;
+  color: #fac858;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* 状态标签 */
+.statusTag {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  min-width: 48px;
+  text-align: center;
+}
+
+.tagSuccess {
+  background: rgba(145,204,117,0.2);
+  color: #91cc75;
+}
+
+.tagProcessing {
+  background: rgba(84,112,198,0.2);
+  color: #5470c6;
+}
+
+.tagWarning {
+  background: rgba(250,200,88,0.2);
+  color: #fac858;
+}
+
+/* ===== 底部 ===== */
+.footer {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.footerLine {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  margin-bottom: 8px;
+}
+
+.footerText {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 1px;
+}

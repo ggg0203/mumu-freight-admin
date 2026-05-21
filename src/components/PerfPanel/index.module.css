@@ -1,0 +1,164 @@
+/* ★★★ PerfPanel - 性能监控面板样式 ★★★ */
+
+.floatingBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 999;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.floatingBtn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme='dark'] .floatingBtn {
+  background: rgba(30, 30, 30, 0.92);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.panel {
+  position: fixed;
+  bottom: 80px;
+  right: 72px;
+  z-index: 999;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  padding: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='dark'] .panel {
+  background: rgba(30, 30, 30, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.closeBtn {
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.metricCard {
+  text-align: center;
+  padding: 8px 4px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme='dark'] .metricCard {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.metricValue {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.metricLabel {
+  font-size: 11px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.good {
+  color: #52c41a;
+}
+
+.warn {
+  color: #faad14;
+}
+
+.bad {
+  color: #ff4d4f;
+}
+
+.apiSection {
+  margin-top: 8px;
+}
+
+.apiTitle {
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.apiList {
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.apiItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  font-size: 11px;
+}
+
+.apiBar {
+  height: 6px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  min-width: 2px;
+  transition: width 0.3s;
+}
+
+.apiUrl {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555;
+}
+
+[data-theme='dark'] .apiUrl {
+  color: #aaa;
+}
+
+.apiTime {
+  color: #888;
+  font-size: 10px;
+  flex-shrink: 0;
+  width: 30px;
+  text-align: right;
+}

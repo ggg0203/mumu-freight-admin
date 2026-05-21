@@ -1,0 +1,46 @@
+/* ★★★ SideMenu 样式 ★★★ */
+
+.sider {
+  overflow: auto;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  transition: all 0.2s;
+}
+
+/* Logo 区域 */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 64px;
+  padding: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Logo 文字 */
+.logoText {
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 滚动条美化 */
+.sider::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sider::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+/* 暗黑模式适配 */
+:global(.dark) .logo {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}

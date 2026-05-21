@@ -1,0 +1,67 @@
+/* ★★★ RealtimeIndicator - 实时连接状态指示灯 ★★★ */
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.indicator:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] .indicator:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.dotOnline {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  background: #52c41a;
+  box-shadow: 0 0 6px rgba(82, 196, 26, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.dotOffline {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  background: #ff4d4f;
+}
+
+.label {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.labelOnline {
+  color: #52c41a;
+}
+
+.labelOffline {
+  color: #ff4d4f;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

@@ -1,0 +1,245 @@
+/* ==================== 看板容器 ==================== */
+
+.kanban {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ==================== 统计栏 ==================== */
+
+.statsBar {
+  display: flex;
+  gap: 24px;
+  padding: 16px 24px;
+  background: var(--ant-color-bg-container);
+  border-radius: 12px;
+  border: 1px solid var(--ant-color-border-secondary);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.statLabel {
+  color: var(--ant-color-text-secondary);
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ==================== 看板主体 ==================== */
+
+.board {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+/* ==================== 看板列 ==================== */
+
+.column {
+  flex: 0 0 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ant-color-bg-layout);
+  border-radius: 12px;
+  border: 1px solid var(--ant-color-border-secondary);
+  transition: all 0.2s ease;
+}
+
+.columnDragOver {
+  background: var(--ant-color-primary-bg);
+  border-color: var(--ant-color-primary);
+  box-shadow: 0 0 0 2px var(--ant-color-primary-outline);
+}
+
+/* 列头部 */
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--ant-color-border-secondary);
+}
+
+.columnTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ant-color-text);
+}
+
+.columnIcon {
+  font-size: 16px;
+}
+
+/* 卡片列表 */
+
+.cardList {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+}
+
+.emptyTip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: var(--ant-color-text-quaternary);
+  font-size: 13px;
+  border: 2px dashed var(--ant-color-border);
+  border-radius: 8px;
+  margin: auto 0;
+}
+
+/* ==================== 订单卡片 ==================== */
+
+.card {
+  background: var(--ant-color-bg-container);
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid var(--ant-color-border-secondary);
+  cursor: grab;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.card:hover {
+  border-color: var(--ant-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.cardDragging {
+  opacity: 0.6;
+  transform: rotate(3deg) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 卡片头部 */
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.orderNo {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ant-color-text);
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+/* 路线信息 */
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.city {
+  color: var(--ant-color-text);
+  font-weight: 500;
+}
+
+.arrow {
+  color: var(--ant-color-primary);
+  font-weight: 600;
+}
+
+/* 货物信息 */
+
+.goodsInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.goodsType {
+  color: var(--ant-color-text-secondary);
+  background: var(--ant-color-fill-secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.weight {
+  color: var(--ant-color-text-tertiary);
+}
+
+/* 金额 */
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f5222d;
+  margin-bottom: 10px;
+}
+
+/* 元信息 */
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ant-color-border-secondary);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ant-color-text-secondary);
+}
+
+/* ==================== 响应式 ==================== */
+
+@media (max-width: 1400px) {
+  .column {
+    flex: 0 0 280px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .column {
+    flex: 0 0 260px;
+    min-width: 260px;
+  }
+}

@@ -1,0 +1,26 @@
+/* ★★★ MainLayout 样式 ★★★ */
+
+/* 主布局容器 - 撑满整个视口 */
+.layout {
+  min-height: 100vh;
+}
+
+/* 内容区域 - 需要适应 TabBar 高度变化 */
+.content {
+  margin: 0 16px 16px;
+  padding: 24px;
+  height: calc(100vh - 64px - 36px - 48px); /* 视口高度 - 头部 - TabBar - 底部 */
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 内容区域（无 TabBar 时） */
+.contentNoTabs {
+  margin: 16px;
+  padding: 24px;
+  height: calc(100vh - 64px - 48px);
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

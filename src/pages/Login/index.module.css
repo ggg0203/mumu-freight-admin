@@ -1,0 +1,118 @@
+/* ★★★ 登录页面样式 - CSS Module ★★★ */
+
+/* 全屏容器 - 渐变背景 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* 登录卡片 */
+.card {
+  width: 420px;
+  max-width: 100%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  animation: fadeInUp 0.6s ease;
+}
+
+/* 头部区域 */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Logo 图标 */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.logoIcon {
+  font-size: 48px;
+}
+
+/* 标题 */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+/* 副标题 */
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* 输入框 */
+.input {
+  height: 44px;
+  border-radius: 8px;
+}
+
+/* 登录按钮 */
+.loginButton {
+  height: 44px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* 错误提示 */
+.errorAlert {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  padding: 10px 16px;
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* 底部 */
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 16px;
+}
+
+/* 入场动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 暗黑模式适配 */
+:global(.dark) .card {
+  background: #1f1f1f;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+:global(.dark) .title {
+  color: #e0e0e0;
+}
+
+:global(.dark) .subtitle {
+  color: #999;
+}
+
+:global(.dark) .errorAlert {
+  background: rgba(255, 77, 79, 0.1);
+  border-color: rgba(255, 77, 79, 0.3);
+}

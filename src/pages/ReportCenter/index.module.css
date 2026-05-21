@@ -1,0 +1,89 @@
+/* ★★★ 智能报表中心样式 ★★★ */
+
+.container {
+  padding: 0;
+}
+
+.header h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* 控制区 */
+.controlCard {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+/* 加载中 */
+.loadingWrap {
+  text-align: center;
+  padding: 80px 0;
+  color: #999;
+}
+
+.loadingWrap p {
+  margin-top: 16px;
+}
+
+/* 报表内容 - 用于 PDF 截图 */
+.reportContent {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.reportHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #1677ff;
+}
+
+.reportHeader h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #333;
+}
+
+.reportHeader p {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+}
+
+/* 汇总行 */
+.summaryRow {
+  margin-bottom: 16px;
+}
+
+/* 图表卡片 */
+.chartCard {
+  border-radius: 8px;
+}
+
+/* 深色模式适配 */
+[data-theme='dark'] .reportContent {
+  background: #141414;
+}
+
+[data-theme='dark'] .reportHeader h2 {
+  color: #fff;
+}
+
+[data-theme='dark'] .subtitle {
+  color: #999;
+}

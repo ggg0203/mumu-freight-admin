@@ -1,0 +1,51 @@
+/* ★★★ 路线规划样式 ★★★ */
+
+.container { padding: 0; }
+
+.pageHeader h2 { margin: 0 0 8px; font-size: 20px; font-weight: 600; }
+.subtitle { margin: 0; color: #666; font-size: 14px; }
+
+.controlCard { margin-bottom: 8px; }
+
+/* 交换按钮 */
+.swapBtn { text-align: center; margin: 4px 0; }
+
+/* 规划按钮 */
+.planBtn { margin-top: 12px; height: 44px; font-size: 15px; border-radius: 8px; }
+
+/* 结果卡片 */
+.resultCard { margin-top: 16px; }
+.resultHeader { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 14px; }
+
+/* 路线步骤 */
+.routeSteps { padding: 0; }
+.stepItem { display: flex; gap: 12px; position: relative; padding: 6px 0; }
+.stepDot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.stepLine { width: 2px; flex-shrink: 0; margin: 0 5px; background: #e8e8e8; }
+.stepContent { flex: 1; min-width: 0; }
+.stepTitle { font-size: 13px; color: #333; font-weight: 500; }
+.stepDesc { font-size: 12px; color: #999; margin-top: 2px; }
+
+/* 地图 */
+.mapCard { border-radius: 8px; }
+.mapContainer { position: relative; width: 100%; border-radius: 8px; overflow: hidden; background: #f5f5f5; }
+
+/* 地图占位 */
+.mapPlaceholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  height: 100%; min-height: 400px; color: #bbb;
+}
+.mapPlaceholder p { margin: 4px 0; font-size: 14px; }
+
+/* 地图加载 */
+.mapLoading {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.8); z-index: 10; gap: 12px;
+}
+
+/* 深色模式 */
+[data-theme='dark'] .subtitle { color: #999; }
+[data-theme='dark'] .stepTitle { color: #fff; }
+[data-theme='dark'] .mapPlaceholder { color: #666; }
+[data-theme='dark'] .mapLoading { background: rgba(0,0,0,0.7); }
