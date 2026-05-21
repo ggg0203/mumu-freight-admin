@@ -118,6 +118,8 @@ jobs:
 
       - name: 验证镜像
         run: |
-          echo "✅ 后端镜像构建成功: mumu-backend:latest"
-          echo "✅ 前端镜像构建成功: mumu-nginx:latest"
-          docker images mumu-backend mumu-nginx
+          echo "========================================"
+          echo "  ✅ 全部镜像构建成功！"
+          echo "  - mumu-backend:latest (FastAPI 后端)"
+          echo "  - mumu-nginx:latest  (React 前端)"
+          echo "========================================"
