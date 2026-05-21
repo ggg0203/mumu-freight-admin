@@ -70,9 +70,9 @@ jobs:
             sleep 10
 
             # 健康检查
-            curl -f http://localhost/api/dashboard/stats || echo "⚠️ 后端健康检查失败"
+            curl -f http://localhost:8000/api/dashboard/stats || echo "⚠️ 后端健康检查失败"
             echo ""
             echo "========================================"
             echo "  ✅ 部署完成！"
-            echo "  访问地址: http://${{ secrets.DEPLOY_HOST }}"
+            echo "  访问地址: http://${{ secrets.DEPLOY_HOST }}:8000"
             echo "========================================"

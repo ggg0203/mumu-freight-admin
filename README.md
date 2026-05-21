@@ -111,13 +111,13 @@ docker compose up -d
 
 ### 3. 访问系统
 
-打开浏览器访问 **http://localhost**
+打开浏览器访问 **http://localhost:8000**（服务器部署则访问 `http://你的IP:8000`）
 
 服务组成：
 
 | 服务 | 端口 | 说明 |
 |------|------|------|
-| nginx | 80 | 前端静态服务 + API 反向代理 |
+| nginx | 8000 | 前端静态服务 + API 反向代理 |
 | backend | 8080 | FastAPI 后端 |
 | mysql | 3307 | MySQL 数据库（映射到宿主机 3307 避免冲突） |
 

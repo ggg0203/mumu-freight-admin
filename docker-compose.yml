@@ -4,12 +4,12 @@
 # 使用方法:
 #   1. 复制 .env.example 为 .env 并修改配置
 #   2. docker compose up -d
-#   3. 访问 http://localhost
+#   3. 访问 http://你的服务器IP:8000
 #
 # 服务组成:
 #   - mysql:   MySQL 8.0 数据库
 #   - backend: FastAPI 后端 (端口 8080)
-#   - nginx:   Nginx 前端 + API 反向代理 (端口 80)
+#   - nginx:   Nginx 前端 + API 反向代理 (端口 8000)
 
 version: "3.8"
 
@@ -76,7 +76,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "${NGINX_PORT:-80}:80"
+      - "${NGINX_PORT:-8000}:80"
     networks:
       - mumu-network
 
