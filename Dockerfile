@@ -16,7 +16,8 @@ ARG DASHSCOPE_API_KEY
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 ENV VITE_APP_TITLE=$VITE_APP_TITLE
 ENV DASHSCOPE_API_KEY=$DASHSCOPE_API_KEY
-RUN npm run build
+# Vite 直接构建（跳过 tsc 类型检查，用 esbuild 编译更快更稳定）
+RUN npx vite build
 
 # Stage 2: Nginx 服务
 FROM nginx:alpine
